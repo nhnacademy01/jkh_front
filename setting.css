@@ -1,0 +1,23 @@
+table, td, th {
+ border : 2px solid black;
+    border-collapse : collapse;
+  }
+  table {
+    width : 60%;
+    height : 200px;
+    margin : auto;
+    text-align : center;
+  }
+  th{
+    text-align: center;
+    background-color : gray;
+  }
+  td {
+      text-align:left;
+  }
+  #poto{
+      margin: auto;
+  }
+  #is{
+      text-align: center;
+  }
