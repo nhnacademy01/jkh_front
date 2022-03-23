@@ -1,0 +1,24 @@
+table, td, th {
+    border : 2px solid rgb(255, 252, 252);
+       border-collapse : collapse;
+     }
+     table {
+       width : 60%;
+       height : 200px;
+       margin : auto;
+       text-align : left;
+     }
+     th{
+       text-align: center;
+       background-color : gray;
+     }
+     td {
+         text-align:left;
+     }
+     #todo-color{
+         margin: auto;
+         background-color: aqua;
+     }
+     #is{
+         text-align: left;
+     }
