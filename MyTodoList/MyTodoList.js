@@ -54,7 +54,7 @@ const week = () => {
             <td><input type="text" id="todoinput">
                 <input type="button" id="todo-add-${i}" value="등록"><br>
                 <input type="button" id="todo-delet-${i}" value="모두삭제"></td>
-            <td><ul id="todo-list-{i}"></td>
+            <td><ul id="todo-list-${i}"></td>
         </tr>`;
         }//일요일
         else if (i % 7 == 0) {
@@ -63,7 +63,7 @@ const week = () => {
             <td><input type="text" id="todoinput">
                 <input type="button" id="todo-add-${i}" value="등록"><br>
                 <input type="button" id="todo-delet-${i}" value="모두삭제"></td>
-            <td><ul id="todo-list-{i}"></td>
+            <td><ul id="todo-list-${i}"></td>
         </tr>`;
         }//토요일
         else {
@@ -77,7 +77,7 @@ const week = () => {
         }
     }
     str += `</table>`
-    console.log("dddsdfsfasc"+str);
+    console.log(str);
     return str;
 }
 
@@ -89,5 +89,6 @@ const week = () => {
 //tag.table.innerHTML = week;
 
 //week();
-var i = document.querySelector("#todo-list");
+
+var i = document.getElementById("todo-list");
 i.innerHTML = week();
