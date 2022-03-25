@@ -15,38 +15,38 @@ const lastDate = () => {
     return temp;
 }
 const addButton = (i) =>  {
-    const addBut = document.createElement(`todo-add-${i}`);
+    const addBut = document.getElementById(`todo-add-${i}`);
     addBut.appendChild(`click`,()=>{
-        let str = document.getElementById(`#todoinput`).value;
+        let str = `<li>${document.getElementById(`#todoinput`).value}</li>`;
         document.getElementById(`#todo-list-${i}`).innerHTML = str;
-    })
+    });
 }
 const week = () => {
     var str = "<table>";
     console.log(`${lastDate}`);
     const weekKor = (i) => {
-        let otion = i % 7;
+        let otion = i % 7 ;
         var strW;
         switch (otion) {
-            case 0:
+            case 5:
                 strW = "토"
                 break;
-            case 1:
+            case 6:
                 strW = "일"
                 break;
-            case 2:
+            case 0:
                 strW = "월"
                 break;
-            case 3:
+            case 1:
                 strW = "화"
                 break;
-            case 4:
+            case 2:
                 strW = "수"
                 break;
-            case 5:
+            case 3:
                 strW = "목"
                 break;
-            case 6:
+            case 4:
                 strW = "금"
                 break;
 
@@ -54,23 +54,23 @@ const week = () => {
         return strW;
     }
     for (let i = 1; i <= 31; i++) {
-
-        if (i % 7 == 1) {
+        addButton(i);
+        if (i % 7 == 6) {
             str += `<tr><td id="todo-date">${i}<br><font color=#FF0000>${weekKor(i)}</td>
             <td id="todo-color">&nbsp;</td>
             <td><input type="text" id="todoinput">
                 <input type="button" id="todo-add-${i}" value="등록"><br>
                 <input type="button" id="todo-delet-${i}" value="모두삭제"></td>
-            <td><ul id="todo-list-${i}"></td>
+            <td><ul id="todo-list-${i}"></ul></td>
         </tr>`;
         }//일요일
-        else if (i % 7 == 0) {
+        else if (i % 7 == 5) {
             str += `<tr><td id="todo-date">${i}<br><font color=#0000FF>${weekKor(i)}</td>
             <td id="todo-color">&nbsp;</td>
             <td><input type="text" id="todoinput">
                 <input type="button" id="todo-add-${i}" value="등록"><br>
                 <input type="button" id="todo-delet-${i}" value="모두삭제"></td>
-            <td><ul id="todo-list-${i}"></td>
+            <td><ul id="todo-list-${i}"></ul></td>
         </tr>`;
         }//토요일
         else {
@@ -79,7 +79,7 @@ const week = () => {
             <td><input type="text" id="todoinput">
                 <input type="button" id="todo-add-${i}" value="등록"><br>
                 <input type="button" id="todo-delet-${i}" value="모두삭제"></td>
-            <td><ul id="todo-list-${i}"></td>
+            <td><ul id="todo-list-${i}"></ul></td>
         </tr>`;
         }
     }
@@ -87,7 +87,10 @@ const week = () => {
     console.log(str);
     return str;
 }
-
+const titleMonth = () =>{
+    var temp =  year() +"-"+month();
+    return temp;
+}
 // var tag = {
 //      table: document.querySelector("#todo-list-table")
 // }
@@ -98,4 +101,6 @@ const week = () => {
 //week();
 
 var i = document.getElementById("todo-list");
+var j = document.getElementById("todo-year-month")
 i.innerHTML = week();
+j.innerHTML = titleMonth();
