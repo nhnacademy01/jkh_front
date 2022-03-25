@@ -14,6 +14,13 @@ const lastDate = () => {
     var temp =lastDate.getDate;
     return temp;
 }
+const addButton = (i) =>  {
+    const addBut = document.createElement(`todo-add-${i}`);
+    addBut.appendChild(`click`,()=>{
+        let str = document.getElementById(`#todoinput`).value;
+        document.getElementById(`#todo-list-${i}`).innerHTML = str;
+    })
+}
 const week = () => {
     var str = "<table>";
     console.log(`${lastDate}`);
